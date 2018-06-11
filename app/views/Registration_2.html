@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Upload Video</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+
+<body bgcolor=00FF99>
+    <h1 align="center">Please click on the "start" button to start the recording:-</h1>
+    <br>
+    <center>
+        <br><br><br><br>
+        <video autoplay></video>
+        <h1 id="status"></h1>
+        <div ng-show="!registerFlag">
+            <input id="record" type="button" value="record" />
+        </div>
+        <!-- <input id="stop" type="button" value="stop" /> -->
+        <!-- <video autoplay></video> -->
+        <br><br>
+        <div ng-show="registerFlag">
+            <input type="Submit" value="Register me!" ng-click="registerVideo()">
+        </div>
+        <br><br>
+        <input type="button" value="Go to Login page" ng-click="gotoHome()">
+    </center>
+</body>
+
+</html>
