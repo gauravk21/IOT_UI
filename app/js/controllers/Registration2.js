@@ -75,12 +75,8 @@ login.controller("Registration2Controller", function($scope, $state, $commonFact
                 processData: false,
                 contentType: false
             }).done(function(data) {
-                console.log(data)
-
-
-
-
-                
+                console.log(data);
+                window.alert('Successfully Registered');
             })
         }, 2000);
 

@@ -1,22 +1,23 @@
 <html>
 
-<head>
-
-</head>
+<head> </head>
 
 <body bgcolor=CCFF33>
     <center>
         <h1>Welcome!</h1>
-
     </center><br><br>
-    <center><video autoplay></video> </iframe>
+    <center>
+        <div class="videoDiv">
+            <video id="v"></video>
+            <canvas id="canvas" hidden="hidden" style="display:none; "></canvas>
+        </div>
     </center>
     <p>
         <center>
             <!-- In - time:
             <iframe height="50" width="100" src="">   </iframe> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Out - time:
             <iframe height="50" width="100" src="">   </iframe> -->
-            <dialog open>Today's attendance status: ________________________</dialog>
+            <dialog open>{{personDetected}}</dialog>
         </center>
     </p>
 </body>
