@@ -22,9 +22,10 @@ login.controller("Registration1Controller", function($scope, $state, $window, $c
                 .then(function successCallback(response) {
                     console.log(response);
                     if (response.status == "200") {
-                        var resData = response.data;
+                        var resData = response.data.data;
+                        console.log(resData);
                         $window.alert(resData[0].message);
-                        $window.localStorage.setItem('userData', resData);
+                        $window.localStorage.setItem('userData', JSON.stringify(resData));
                         $state.go("Registration_2");
                     } else {
                         // console.log("Responce for login in:", $scope.loginResponceData);

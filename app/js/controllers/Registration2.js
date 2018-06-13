@@ -65,13 +65,12 @@ login.controller("Registration2Controller", function($scope, $state, $commonFact
             const bigVideoBlob = new Blob(chunks, { 'type': 'video/webm; codecs=webm' })
             let fd = new FormData()
             fd.append('video', bigVideoBlob);
-            console.log($window.localStorage.get('userData'));
-            const user_id = $window.localStorage.get('userData').person_id;
-            console.log(user_id);
+            const userData = JSON.parse($window.localStorage.getItem('userData'));
+            const user_id = userData[0].person_id;
             fd.append('user_id', user_id + '.mp4')
             $.ajax({
                 type: 'POST',
-                url: 'http://192.168.43.151:8080/api/v1/registerUser',
+                url: 'http://localhost:8080/api/v1/registerUser',
                 data: fd,
                 processData: false,
                 contentType: false
