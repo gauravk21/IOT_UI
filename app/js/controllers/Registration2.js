@@ -76,6 +76,11 @@ login.controller("Registration2Controller", function($scope, $state, $commonFact
                 contentType: false
             }).done(function(data) {
                 console.log(data)
+
+
+
+
+                
             })
         }, 2000);
 
