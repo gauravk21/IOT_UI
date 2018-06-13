@@ -24,7 +24,7 @@ login.controller("Registration1Controller", function($scope, $state, $window, $c
                     if (response.status == "200") {
                         var resData = response.data;
                         $window.alert(resData[0].message);
-                        localStorage.setItem(userData, resData);
+                        $window.localStorage.setItem('userData', resData);
                         $state.go("Registration_2");
                     } else {
                         // console.log("Responce for login in:", $scope.loginResponceData);

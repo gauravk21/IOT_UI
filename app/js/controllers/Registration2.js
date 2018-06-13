@@ -1,4 +1,4 @@
-login.controller("Registration2Controller", function($scope, $state, $commonFactories, $rootScope, $timeout) {
+login.controller("Registration2Controller", function($scope, $state, $commonFactories, $rootScope, $timeout, $window) {
 
     console.log("In-Registration2  controller");
 
@@ -64,11 +64,14 @@ login.controller("Registration2Controller", function($scope, $state, $commonFact
             console.log($scope.chunks);
             const bigVideoBlob = new Blob(chunks, { 'type': 'video/webm; codecs=webm' })
             let fd = new FormData()
-            fd.append('video', bigVideoBlob)
-            fd.append('fname', new Date() + '.mp4')
+            fd.append('video', bigVideoBlob);
+            console.log($window.localStorage.get('userData'));
+            const user_id = $window.localStorage.get('userData').person_id;
+            console.log(user_id);
+            fd.append('user_id', user_id + '.mp4')
             $.ajax({
                 type: 'POST',
-                url: 'http://192.168.149.140:8080/upload',
+                url: 'http://192.168.43.151:8080/api/v1/registerUser',
                 data: fd,
                 processData: false,
                 contentType: false
